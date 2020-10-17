@@ -8,7 +8,7 @@ void imprimir(char *listaNomes);
 
 
 int main() {
-    char *listaNomes = NULL, *aux = NULL;
+    char *listaNomes = NULL;
     int opcao;
 
      do {
@@ -17,13 +17,11 @@ int main() {
         getchar();
        switch (opcao) {
            case 1: 
-                aux = insere(listaNomes);
-                listaNomes = aux;
+                listaNomes = insere(listaNomes);
                 break;
 
             case 2:
-                aux = remover(listaNomes);
-                listaNomes = aux;
+                listaNomes = remover(listaNomes);
                 break;
                 
             case 3:
@@ -32,7 +30,7 @@ int main() {
         }
     } while (opcao !=  4);
 
-    free(aux);
+    free(listaNomes);
 
     return 0;
 }
@@ -104,7 +102,7 @@ char *remover(char *listaNomes) {
 
             if (strcmp(nomeSelecionado, nomeRetirado) != 0) {
                 if (!listaNomesAux) {
-                    novoTamanho = tamanhoNomeSelecionado + 2;
+                    novoTamanho = tamanhoNomeSelecionado + 2; //Acrescentando ',' e o fim da string
                     listaNomesAux = (char*)malloc(novoTamanho * sizeof(char));
                     if (!listaNomesAux) {
                         printf("Erro ao alocar memoria\n");
@@ -115,7 +113,7 @@ char *remover(char *listaNomes) {
                     strcat (listaNomesAux, ",");
 
                 } else {
-                    novoTamanho = tamanhoListaNomesAux + tamanhoNomeSelecionado + 2;
+                    novoTamanho = tamanhoListaNomesAux + tamanhoNomeSelecionado + 2; //Acrescentando ',' e o fim da string
                     listaNomesAux = (char*)realloc(listaNomesAux, novoTamanho * sizeof(char));
                     strcat (listaNomesAux, nomeSelecionado);
                     strcat (listaNomesAux, ",");

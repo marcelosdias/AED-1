@@ -10,13 +10,13 @@ int main() {
     void *pBuffer;
 
     pBuffer = malloc((3 * sizeof(int)) + (20 * sizeof(char))); //int quantPalavras, i, opcao; char nome[20];
-    // Os 20 pirmeiros endereços de char serão utlizados para ler o nome que deve ser removido
+    // Os 20 primeiros endereços de char serão utlizados para ler o nome que deve ser removido
 
     *(int*)pBuffer = 0;
 
     do {
         printf("1.Inserir\n2.Remover\n3.Listar\n4.Sair\nEscolha: ");
-        scanf("%d", (int*)(pBuffer + (3 * sizeof(int)))); // Armazena no 3 endereço de inteiros o valor utilizado para o switch
+        scanf("%d", (int*)(pBuffer + (3 * sizeof(int)))); // Armazena no terceiro endereço de inteiros o valor utilizado para o switch
         getchar(); // Retira o '\n'
 
         switch (*(int*)(pBuffer + (3 * sizeof(int)))) {
@@ -40,7 +40,7 @@ int main() {
 }
 
 void *insere(void *pBuffer) {
-    pBuffer = realloc(pBuffer, 3 * sizeof(int) + 20 * sizeof(char) + ((20 * sizeof(char)) * ((*(int*)pBuffer) + 1))); // Adiociona +1 no primeiro endereço de inteiros, pois os 20 primeiros endereócs de char serão utilziados para remover um nome
+    pBuffer = realloc(pBuffer, 3 * sizeof(int) + 20 * sizeof(char) + ((20 * sizeof(char)) * ((*(int*)pBuffer) + 1))); // Adiciona +1 no primeiro endereço de inteiros, pois os 20 primeiros endereços de char serão utilizados para remover um nome
 
     printf("Informe o nome: ");
     scanf("%s", (char*)pBuffer + 3 * sizeof(int) + 20 * sizeof(char) + ((20 * sizeof(char)) * (*(int*)pBuffer)));
@@ -54,13 +54,13 @@ void *remover(void *pBuffer) {
     printf("Informe um nome: ");
     scanf("%s", (char*)(pBuffer + 3 * sizeof(int)));
 
-    for (*(int*)(pBuffer + sizeof(int)) = 0; *(int*)(pBuffer + sizeof(int)) < *(int*)(pBuffer); *(int*)(pBuffer + sizeof(int)) = *(int*)(pBuffer + sizeof(int)) + 1) { // Percorre todos os nomes armazenados, utlizando o primeiro (quantPalavras) e o segundo (i) endereóc de inteiros
+    for (*(int*)(pBuffer + sizeof(int)) = 0; *(int*)(pBuffer + sizeof(int)) < *(int*)(pBuffer); *(int*)(pBuffer + sizeof(int)) = *(int*)(pBuffer + sizeof(int)) + 1) { // Percorre todos os nomes armazenados, utlizando o primeiro (quantPalavras) e o segundo (i) endereço de inteiros
         if((strcmp((char*)(pBuffer + 3 * sizeof(int) + 20 * sizeof(char) + ((20 * sizeof(char)) * (*(int*)(pBuffer + sizeof(int))))), (char*)(pBuffer + 3 * sizeof(int)))) == 0) { // Compara todos os nomes armazenados com o nome armazenado nos 20 primeiros endereços de char
             strcpy((char*)(pBuffer + 3 * sizeof(int) + 20 * sizeof(char) + ((20 * sizeof(char)) * (*(int*)(pBuffer + sizeof(int))))), (char*)(pBuffer + 3 * sizeof(int) + 20 * sizeof(char) + ((20 * sizeof(char)) * (*(int*)pBuffer - 1)))); //Se o nome deve ser removido, copia o último nome armazenado para esse endereço
             
             *(int*)pBuffer = *(int*)pBuffer - 1; //Decrementa o contador de palavras
 
-            pBuffer = realloc(pBuffer, 3 * sizeof(int) + 20 * sizeof(char) + ((20 * sizeof(char)) * ((*(int*)pBuffer)))); // Redimensiona o ponteiro, retirando os espeços ocupados pelo nome retirado
+            pBuffer = realloc(pBuffer, 3 * sizeof(int) + 20 * sizeof(char) + ((20 * sizeof(char)) * ((*(int*)pBuffer)))); // Redimensiona o ponteiro, retirando os espaços ocupados pelo nome retirado
         }
     }
 

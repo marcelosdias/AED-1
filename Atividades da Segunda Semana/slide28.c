@@ -14,6 +14,12 @@ int main () {
     int i, index = 0, tamanho = 1, opcao;
 
     p = (Pessoa*)malloc(sizeof(Pessoa));
+
+    if (!p) {
+        printf("Erro a alocar memoria\n");
+        exit(1);
+    } 
+    
     do {
         printf("Informe o nome: ");
         scanf("%[^\n]s", p[index].nome);

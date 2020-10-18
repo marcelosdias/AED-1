@@ -10,7 +10,7 @@ void listar(void *pBuffer);
 int main() {
     void *pBuffer = NULL;
 
-    pBuffer = malloc((4 * sizeof(int)) + (20 * sizeof(char))); //int quantPalavras, index, opcao, flag; char nome[20];
+    pBuffer = malloc((4 * sizeof(int)) + (20 * sizeof(char))); //int quantContatos, index, opcao, flag; char nome[20];
     // Os 20 primeiros endereços de char serão utlizados para ler o nome que deve ser removido
 
     if (!pBuffer) {
@@ -60,13 +60,12 @@ void *insere(void *pBuffer) {
     printf("Informe o numero: ");
     scanf("%d", (int*)(pBuffer + 4 * sizeof(int) + 40 * sizeof(char) + ((20 * sizeof(char) + sizeof(int)) * ((*(int*)pBuffer))))); // 40 * sizeof é utilizado para pular os 20 primeiros char + o nome que acabou de ser inserido.
 
-    *(int*)(pBuffer) = *(int*)(pBuffer) + 1; // Incrementa a quantidade de palavras
+    *(int*)(pBuffer) = *(int*)(pBuffer) + 1; // Incrementa a quantidade de contatos
 
     return pBuffer;
 }
 
 void *remover(void *pBuffer) {
-    int c = sizeof(char), i = sizeof(int);
     printf("Informe um nome: ");
     scanf("%s", (char*)(pBuffer + 4 * sizeof(int)));
 
@@ -74,9 +73,9 @@ void *remover(void *pBuffer) {
         if((strcmp((char*)(pBuffer + 4 * sizeof(int) + 20 * sizeof(char) + ((20 * sizeof(char) + sizeof(int)) * (*(int*)(pBuffer + sizeof(int))))), (char*)(pBuffer + 4 * sizeof(int)))) == 0) { // Compara todos os nomes armazenados com o nome armazenado nos 20 primeiros endereços de char
             strcpy((char*)(pBuffer + 4 * sizeof(int) + 20 * sizeof(char) + ((20 * sizeof(char) + sizeof(int)) * (*(int*)(pBuffer + sizeof(int))))), (char*)(pBuffer + 4 * sizeof(int) + 20 * sizeof(char) + ((20 * sizeof(char) + sizeof(int)) * (*(int*)pBuffer - 1)))); //Se o nome deve ser removido, copia o último nome armazenado para esse endereço
             
-            *(int*)(pBuffer + 4 * sizeof(int) + 40 * sizeof(char) + ((20 * sizeof(char) + sizeof(int)) * (*(int*)(pBuffer + sizeof(int))))) = *(int*)(pBuffer + 4 * sizeof(int) + 40 * sizeof(char) + ((20 * sizeof(char) + sizeof(int)) * (*(int*)pBuffer - 1)));
+            *(int*)(pBuffer + 4 * sizeof(int) + 40 * sizeof(char) + ((20 * sizeof(char) + sizeof(int)) * (*(int*)(pBuffer + sizeof(int))))) = *(int*)(pBuffer + 4 * sizeof(int) + 40 * sizeof(char) + ((20 * sizeof(char) + sizeof(int)) * (*(int*)pBuffer - 1))); // 40 * sizeof(char) utilizado para apontar para o endereço apos o nome sellecionado
             
-            *(int*)pBuffer = *(int*)pBuffer - 1; //Decrementa o contador de palavras
+            *(int*)pBuffer = *(int*)pBuffer - 1; //Decrementa o contador de contatos
 
             pBuffer = realloc(pBuffer, 4 * sizeof(int) + 20 * sizeof(char) + ((20 * sizeof(char) + sizeof(int)) * ((*(int*)pBuffer)))); // Redimensiona o ponteiro, retirando os espaços ocupados pelo nome retirado
             
@@ -116,7 +115,7 @@ void listar(void *pBuffer) {
     if (*(int*)pBuffer > 0) {
         for (*(int*)(pBuffer + sizeof(int)) = 0; *(int*)(pBuffer + sizeof(int)) < *(int*)(pBuffer); *(int*)(pBuffer + sizeof(int)) = *(int*)(pBuffer + sizeof(int)) + 1) { // Percorre todos os nomes armazenados, utlizando o primeiro (quantPalavras) e o segundo (i) endereóc de inteiros
             printf("Nome: %s; ", (char*)(pBuffer + 4 * sizeof(int) + 20 * sizeof(char) + ((20 * sizeof(char) + sizeof(int)) * (*(int*)(pBuffer + sizeof(int)))))); // Lista todos os nomes
-            printf("Numero: %d\n", *(int*)(pBuffer + 4 * sizeof(int) + 40 * sizeof(char) + ((20 * sizeof(char) + sizeof(int)) * (*(int*)(pBuffer + sizeof(int)))))); // Lista todos os nomes
+            printf("Numero: %d\n", *(int*)(pBuffer + 4 * sizeof(int) + 40 * sizeof(char) + ((20 * sizeof(char) + sizeof(int)) * (*(int*)(pBuffer + sizeof(int)))))); // Lista todos os numeros
         }
     } else {
         printf("Lista Vazia\n");

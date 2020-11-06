@@ -1,0 +1,34 @@
+1 - b) Mostrará na tela os valores de 1 a 10.
+
+2 - Ambas saidas serão iguais, imprimindo 1, 2, 3, 4. No trecho 1, utiliza-se dois for encadeados para que possa
+percorrer todas a matriz(linha e coluna). Porém, no trecho 2 é passado para o ponteiro p o endereço de inicio da matriz
+através de: int *p = &mat[0][0]; Utilizando um for que conte 4 vezes, pois é o número de elementos, será percorrida
+toda matriz, não mais por linhas e colunas, agora será percorrida incrementando o ponteiro, ou seja, através do endereço de
+inicio da matriz, será percorrida a mesma incrementando o endereço.
+
+3 - 
+a) p recebe o endereço de j
+b) -2
+c) 3
+d) 6
+
+4 - 1000 7 5 15 9
+
+5 - a) *(pulo + 2) 
+
+6 - 
+a) p = mat + 1; Se a primeira posição de mat na mmemória é 1000, após o incremento, p recebera a próxima posição
+de mat, sendo assim, p aponta para a posição 1004 
+d) x=(*mat)++; X recebe o valor da primeira posição de mat, logo após, o mesmo é incrementando
+
+7 - exercicio7.c
+
+8 - Resposta: exercicio8.c
+
+9 - e) Copiar os elementos contidos na região de memória referenciada pelo identificador s2
+após os elementos armazenados na região de memória referenciada pelo identificador s1.
+
+10 - 
+a) Utilizado para calcular o quadrado de um número na
+b) 100
+c) Resposta: exercicio10c.c

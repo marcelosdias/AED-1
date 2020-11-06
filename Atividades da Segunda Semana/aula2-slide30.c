@@ -12,7 +12,7 @@ void liberaMatriz(int **matriz, int n);
 
 int main() {
     int **matriz = NULL, *valoresColuna = NULL;
-    int nLin, nCol, opcao, somaTotal, colunaSelecionada;//, i;
+    int nLin, nCol, opcao, somaTotal, colunaSelecionada;
 
     do {
         printf("1.Criar Matriz\n2.Inserir\n3.Somar\n4.Elementos da coluna\n5.Imprimir Matriz\n6.Sair\nEscolha: ");
@@ -21,6 +21,8 @@ int main() {
         switch (opcao) {
             
             case 1:
+                liberaMatriz(matriz, nLin);
+
                 printf("Informe o numero de colunas: ");
                 scanf("%d", &nCol);
 
@@ -83,7 +85,7 @@ int **criaMatriz(int nLin, int nCol) {
         }
     }
 
-     for (i = 0; i < nLin; i++) {
+     for (i = 0; i < nLin; i++) { // Somente inicializando a matriz com 0
         for (j = 0; j < nCol; j++) {
             matriz[i][j] = 0;
         }
@@ -171,5 +173,4 @@ void liberaMatriz(int **matriz, int n) {
     }
 
     free(matriz);
-
 }

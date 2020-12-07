@@ -19,4 +19,3 @@ void *realloc2(void *pont, size_t newSize, int size) {
 
     return p;
 }
-

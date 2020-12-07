@@ -53,7 +53,6 @@ int main() {
 void *insere(void *pBuffer) {
     pBuffer = realloc(pBuffer, 4 * sizeof(int) + 20 * sizeof(char) + ((20 * sizeof(char) + sizeof(int)) * ((*(int*)pBuffer) + 1))); // Adiciona +1 no primeiro endereço de inteiros, pois os 20 primeiros endereços de char serão utilizados para remover um nome
 
-
     printf("Informe o nome: ");
     scanf("%s", (char*)pBuffer + 4 * sizeof(int) + 20 * sizeof(char) + ((20 * sizeof(char) + sizeof(int)) * (*(int*)pBuffer)));
     

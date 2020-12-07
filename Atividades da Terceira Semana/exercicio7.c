@@ -19,6 +19,10 @@ int main() {
     }
 
     p = insertionSort(p, tamanho); // Ordena os números, tornando mais fácil a comparação com o próximo número do vetor
+    for (i = 0; i < tamanho; i++) {
+        printf("%d ", p[i]);
+    }
+    printf("\n");
     p = retiraRepetidos(p, &tamanho);
 
     for (i = 0; i < tamanho; i++) {

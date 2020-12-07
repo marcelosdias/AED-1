@@ -1,0 +1,6 @@
+2) É possível que uma inserção/remoção gere mais do que um rotação
+dupla? Explique
+
+Árvores AVL a cada inserção ou remoção é checada se é necessário realocar algum nodo, o que faz com que se ajuste a cada inserção de forma automática
+ou seja, não se torna necessário realizar mais que uma rotação dupla, pois a arvore está sempre balanceada. Ao ajustar um nó, todas as suas subarvores 
+são levadas juntas, não alterando a arvore.

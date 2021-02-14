@@ -1,0 +1,42 @@
+# File for suppressing errors found in pid 45934: "exercicio7"
+
+# Suppression for Error #1
+UNADDRESSABLE ACCESS
+name=Error #1 (update to meaningful name)
+exercicio7!retiraRepetidos
+exercicio7!main
+
+## Mod+offs-style suppression for Error #1:
+UNADDRESSABLE ACCESS
+name=Error #1 (update to meaningful name)
+<exercicio7+0x1485>
+<exercicio7+0x12c0>
+
+# Suppression for Error #2
+UNADDRESSABLE ACCESS
+name=Error #2 (update to meaningful name)
+exercicio7!retiraRepetidos
+exercicio7!main
+
+## Mod+offs-style suppression for Error #2:
+UNADDRESSABLE ACCESS
+name=Error #2 (update to meaningful name)
+<exercicio7+0x14e2>
+<exercicio7+0x12c0>
+
+# Suppression for Error #3
+UNINITIALIZED READ
+name=Error #3 (update to meaningful name)
+libc.so.6!*
+libc.so.6!_IO_printf
+libc.so.6!__libc_start_main
+exercicio7!_start
+
+## Mod+offs-style suppression for Error #3:
+UNINITIALIZED READ
+name=Error #3 (update to meaningful name)
+<libc.so.6+0x7aad5>
+<libc.so.6+0x64ebf>
+<libc.so.6+0x270b3>
+<exercicio7+0x112e>
+

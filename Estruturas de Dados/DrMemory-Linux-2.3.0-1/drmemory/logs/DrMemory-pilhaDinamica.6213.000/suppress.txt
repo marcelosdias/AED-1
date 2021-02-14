@@ -1,0 +1,14 @@
+# File for suppressing errors found in pid 6213: "pilhaDinamica"
+
+# Suppression for Error #1
+LEAK
+name=Error #1 (update to meaningful name)
+libdrmemorylib.so!replace_malloc
+pilhaDinamica!main
+
+## Mod+offs-style suppression for Error #1:
+LEAK
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.so+0x49bc0>
+<pilhaDinamica+0x1256>
+

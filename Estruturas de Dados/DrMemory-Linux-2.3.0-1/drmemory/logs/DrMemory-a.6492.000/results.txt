@@ -1,0 +1,30 @@
+Dr. Memory version 2.3.0 build 1 built on Feb  6 2020 01:44:52
+Dr. Memory results for pid 6492: "a"
+Recorded 17 suppression(s) from default /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/Agenda/DrMemory-Linux-2.3.0-1/bin64/suppress-default.txt
+
+WARNING: application is missing line number information.
+
+Error #1: UNINITIALIZED READ: reading register rax
+# 0 insere
+# 1 main
+Note: @0:00:01.726 in thread 6492
+Note: instruction: test   %rax %rax
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      1 unique,     1 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+     18 unique,    21 total,   8865 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/Agenda/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-a.6492.000/results.txt

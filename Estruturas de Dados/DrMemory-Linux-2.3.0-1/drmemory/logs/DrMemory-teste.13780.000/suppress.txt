@@ -1,0 +1,42 @@
+# File for suppressing errors found in pid 13780: "teste"
+
+# Suppression for Error #1
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+libdrmemorylib.so!replace_strcat
+teste!insere
+teste!main
+
+## Mod+offs-style suppression for Error #1:
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.so+0xddb6a>
+<teste+0x13db>
+<teste+0x12c4>
+
+# Suppression for Error #2
+UNADDRESSABLE ACCESS
+name=Error #2 (update to meaningful name)
+libdrmemorylib.so!replace_strcpy
+teste!insere
+teste!main
+
+## Mod+offs-style suppression for Error #2:
+UNADDRESSABLE ACCESS
+name=Error #2 (update to meaningful name)
+<libdrmemorylib.so+0xdda58>
+<teste+0x13db>
+<teste+0x12c4>
+
+# Suppression for Error #3
+UNADDRESSABLE ACCESS
+name=Error #3 (update to meaningful name)
+libdrmemorylib.so!replace_strlen
+teste!main
+
+## Mod+offs-style suppression for Error #3:
+UNADDRESSABLE ACCESS
+name=Error #3 (update to meaningful name)
+<libdrmemorylib.so+0xdd5e8>
+<teste+0x1304>
+

@@ -1,0 +1,36 @@
+# File for suppressing errors found in pid 15469: "teste"
+
+# Suppression for Error #1
+UNADDRESSABLE ACCESS
+name=Error #1 (update to meaningful name)
+libdrmemorylib.so!replace_strlen
+teste!insere
+teste!main
+
+## Mod+offs-style suppression for Error #1:
+UNADDRESSABLE ACCESS
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.so+0xdd5e8>
+<teste+0x13a3>
+<teste+0x12c1>
+
+# Suppression for Error #2
+POSSIBLE LEAK
+name=Error #2 (update to meaningful name)
+libdrmemorylib.so!replace_malloc
+
+## Mod+offs-style suppression for Error #2:
+POSSIBLE LEAK
+name=Error #2 (update to meaningful name)
+<libdrmemorylib.so+0x49bc0>
+
+# Suppression for Error #3
+POSSIBLE LEAK
+name=Error #3 (update to meaningful name)
+libdrmemorylib.so!replace_calloc
+
+## Mod+offs-style suppression for Error #3:
+POSSIBLE LEAK
+name=Error #3 (update to meaningful name)
+<libdrmemorylib.so+0x4a430>
+

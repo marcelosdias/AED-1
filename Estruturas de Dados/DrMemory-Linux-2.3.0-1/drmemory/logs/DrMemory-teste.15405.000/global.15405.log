@@ -1,0 +1,75 @@
+process=15405, parent=15399
+Dr. Memory version 2.3.0 build 1 built on Feb  6 2020 01:44:52
+start time: 3679741:46:46.094 == 13:46:46.094 10/13/2020
+Recorded 17 suppression(s) from default /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/bin64/suppress-default.txt
+new thread #0 id=15405
+WARNING: symbol cache file has wrong version
+
+module load event: "libdrmemorylib.so" 0x00007fd977baa000-0x00007fd977d09000 modid: 1 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/bin64/release/libdrmemorylib.so
+WARNING: symbol cache file has wrong version
+
+module load event: "teste" 0x00007fd987baa000-0x00007fd987baf000 modid: 2 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/teste
+WARNING: symbol cache file has wrong version
+
+module load event: "ld-linux-x86-64.so.2" 0x00007fd98bb7f000-0x00007fd98bbaf000 modid: 3 /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: symbol cache file has wrong version
+
+module load event: "libdynamorio.so" 0x00007fd98bbb5000-0x00007fd98bdcd000 modid: 4 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/dynamorio/lib64/release/libdynamorio.so
+WARNING: unable to open [vdso]
+WARNING: symbol cache file has wrong version
+
+module load event: "linux-vdso.so.1" 0x00007ffe491a5000-0x00007ffe491a6000 modid: 5 [vdso]
+
+module load event: "libc.so.6" 0x00007fd98b5aa000-0x00007fd98b79c000 modid: 6 /usr/lib/x86_64-linux-gnu/libc-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/libc-2.31.so
+
+Error #1: UNADDRESSABLE ACCESS beyond heap bounds: reading 1 byte(s)
+# 0 replace_strlen    [/drmemory_package/drmemory/replace.c:412] (0x00007fd977c875e8 <libdrmemorylib.so+0xdd5e8>) modid:1
+# 1 insere (0x00007fd987bab3a3 <teste+0x13a3>) modid:2
+# 2 main  (0x00007fd987bab2c1 <teste+0x12c1>) modid:2
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+	error end
+
+Error #2: UNADDRESSABLE ACCESS beyond heap bounds: reading 1 byte(s)
+# 0 replace_strlen    [/drmemory_package/drmemory/replace.c:412] (0x00007fd977c875e8 <libdrmemorylib.so+0xdd5e8>) modid:1
+# 1 main  (0x00007fd987bab311 <teste+0x1311>) modid:2
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+	error end
+
+Error #3: POSSIBLE LEAK 4232 bytes 
+# 0 replace_malloc    [/drmemory_package/common/alloc_replace.c:2577] (0x00007fd977bf3bc0 <libdrmemorylib.so+0x49bc0>) modid:1
+	error end
+
+Error #4: POSSIBLE LEAK 272 bytes 
+# 0 replace_calloc    [/drmemory_package/common/alloc_replace.c:2617] (0x00007fd977bf4430 <libdrmemorylib.so+0x4a430>) modid:1
+	error end
+
+DUPLICATE ERROR COUNTS:
+	Error #   1:      3
+	Error #   2:      9
+
+SUPPRESSIONS USED:
+	    15x: default i#79 (ld-linux)
+
+ERRORS FOUND:
+      2 unique,    12 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      2 unique,     2 total,   4504 byte(s) of possible leak(s)
+Details: /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-teste.15405.000/results.txt
+
+DUPLICATE POTENTIAL ERROR COUNTS:
+
+POTENTIAL ERRORS FOUND:
+      0 unique,     0 total potential unaddressable access(es)
+      0 unique,     0 total potential uninitialized access(es)
+      0 unique,     0 total potential invalid heap argument(s)
+      0 unique,     0 total potential warning(s)
+      0 unique,     0 total,      0 byte(s) of potential leak(s)
+      0 unique,     0 total,      0 byte(s) of potential possible leak(s)
+Details: /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-teste.15405.000/potential_errors.txt
+Exiting @0:00:11.143 in thread 15405
+LOG END

@@ -1,0 +1,37 @@
+process=34558, parent=34548
+Dr. Memory version 2.3.0 build 1 built on Feb  6 2020 01:44:52
+start time: 3680037:45:54.547 == 21:45:54.547 10/25/2020
+Recorded 17 suppression(s) from default /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/Atividades da Segunda Semana/DrMemory-Linux-2.3.0-1/bin64/suppress-default.txt
+new thread #0 id=34558
+WARNING: symbol cache file has wrong version
+
+module load event: "libdrmemorylib.so" 0x00007fb5da5e8000-0x00007fb5da747000 modid: 1 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/Atividades da Segunda Semana/DrMemory-Linux-2.3.0-1/bin64/release/libdrmemorylib.so
+WARNING: symbol cache file has wrong version
+
+module load event: "aula2-slide30" 0x00007fb5ea5e8000-0x00007fb5ea5ed000 modid: 2 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/Atividades da Segunda Semana/aula2-slide30
+WARNING: symbol cache file has wrong version
+
+module load event: "ld-linux-x86-64.so.2" 0x00007fb5ee5bd000-0x00007fb5ee5ed000 modid: 3 /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: symbol cache file has wrong version
+
+module load event: "libdynamorio.so" 0x00007fb5ee5f3000-0x00007fb5ee80b000 modid: 4 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/Atividades da Segunda Semana/DrMemory-Linux-2.3.0-1/dynamorio/lib64/release/libdynamorio.so
+WARNING: unable to open [vdso]
+WARNING: symbol cache file has wrong version
+
+module load event: "linux-vdso.so.1" 0x00007ffd2eddd000-0x00007ffd2edde000 modid: 5 [vdso]
+
+module load event: "libc.so.6" 0x00007fb5edfe8000-0x00007fb5ee1da000 modid: 6 /usr/lib/x86_64-linux-gnu/libc-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/libc-2.31.so
+
+NEW THREAD: main thread 34558
+
+
+Error #1: UNINITIALIZED READ: reading register r11
+# 0 libc.so.6!?         (0x00007fb5ee062ad5 <libc.so.6+0x7aad5>) modid:6
+# 1 libc.so.6!_IO_printf (0x00007fb5ee04cebf <libc.so.6+0x64ebf>) modid:6
+# 2 libc.so.6!__libc_start_main (0x00007fb5ee00f0b3 <libc.so.6+0x270b3>) modid:6
+# 3 _start        (0x00007fb5ea5e91ae <aula2-slide30+0x11ae>) modid:2
+Note: @0:00:04.819 in thread 34558
+Note: instruction: test   %r11 %r11
+	error end

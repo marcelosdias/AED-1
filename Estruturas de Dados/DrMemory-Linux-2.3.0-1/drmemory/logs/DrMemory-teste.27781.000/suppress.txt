@@ -1,0 +1,58 @@
+# File for suppressing errors found in pid 27781: "teste"
+
+# Suppression for Error #1
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+libdrmemorylib.so!replace_strlen
+teste!remover
+teste!main
+
+## Mod+offs-style suppression for Error #1:
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.so+0xdd5eb>
+<teste+0x15d8>
+<teste+0x1371>
+
+# Suppression for Error #2
+UNINITIALIZED READ
+name=Error #2 (update to meaningful name)
+libdrmemorylib.so!replace_strcpy
+teste!remover
+teste!main
+
+## Mod+offs-style suppression for Error #2:
+UNINITIALIZED READ
+name=Error #2 (update to meaningful name)
+<libdrmemorylib.so+0xdda54>
+<teste+0x1651>
+<teste+0x1371>
+
+# Suppression for Error #3
+UNINITIALIZED READ
+name=Error #3 (update to meaningful name)
+libdrmemorylib.so!replace_strcpy
+teste!remover
+teste!main
+
+## Mod+offs-style suppression for Error #3:
+UNINITIALIZED READ
+name=Error #3 (update to meaningful name)
+<libdrmemorylib.so+0xdda54>
+<teste+0x168d>
+<teste+0x1371>
+
+# Suppression for Error #4
+LEAK
+name=Error #4 (update to meaningful name)
+libdrmemorylib.so!replace_realloc
+teste!insere
+teste!main
+
+## Mod+offs-style suppression for Error #4:
+LEAK
+name=Error #4 (update to meaningful name)
+<libdrmemorylib.so+0x49d40>
+<teste+0x14c9>
+<teste+0x135f>
+

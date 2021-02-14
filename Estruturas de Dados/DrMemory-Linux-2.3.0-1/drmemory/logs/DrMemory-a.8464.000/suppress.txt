@@ -1,0 +1,52 @@
+# File for suppressing errors found in pid 8464: "a"
+
+# Suppression for Error #1
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+a!insere
+a!main
+
+## Mod+offs-style suppression for Error #1:
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+<a+0x13eb>
+<a+0x12d5>
+
+# Suppression for Error #2
+UNINITIALIZED READ
+name=Error #2 (update to meaningful name)
+a!reset
+a!main
+
+## Mod+offs-style suppression for Error #2:
+UNINITIALIZED READ
+name=Error #2 (update to meaningful name)
+<a+0x139a>
+<a+0x1342>
+
+# Suppression for Error #3
+UNADDRESSABLE ACCESS
+name=Error #3 (update to meaningful name)
+a!reset
+a!main
+
+## Mod+offs-style suppression for Error #3:
+UNADDRESSABLE ACCESS
+name=Error #3 (update to meaningful name)
+<a+0x1377>
+<a+0x1342>
+
+# Suppression for Error #4
+INVALID HEAP ARGUMENT
+name=Error #4 (update to meaningful name)
+libdrmemorylib.so!replace_free
+a!reset
+a!main
+
+## Mod+offs-style suppression for Error #4:
+INVALID HEAP ARGUMENT
+name=Error #4 (update to meaningful name)
+<libdrmemorylib.so+0x497a0>
+<a+0x138b>
+<a+0x1342>
+

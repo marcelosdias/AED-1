@@ -1,0 +1,26 @@
+# File for suppressing errors found in pid 8508: "pilhaDinamica"
+
+# Suppression for Error #1
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+pilhaDinamica!PUSH
+pilhaDinamica!main
+
+## Mod+offs-style suppression for Error #1:
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+<pilhaDinamica+0x1436>
+<pilhaDinamica+0x12e3>
+
+# Suppression for Error #2
+UNINITIALIZED READ
+name=Error #2 (update to meaningful name)
+pilhaDinamica!PUSH
+pilhaDinamica!main
+
+## Mod+offs-style suppression for Error #2:
+UNINITIALIZED READ
+name=Error #2 (update to meaningful name)
+<pilhaDinamica+0x14d7>
+<pilhaDinamica+0x12e3>
+

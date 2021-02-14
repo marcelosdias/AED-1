@@ -1,0 +1,24 @@
+# File for suppressing errors found in pid 24174: "aula2-slide27"
+
+# Suppression for Error #1
+UNADDRESSABLE ACCESS
+name=Error #1 (update to meaningful name)
+aula2-slide27!main
+
+## Mod+offs-style suppression for Error #1:
+UNADDRESSABLE ACCESS
+name=Error #1 (update to meaningful name)
+<aula2-slide27+0x12e8>
+
+# Suppression for Error #2
+LEAK
+name=Error #2 (update to meaningful name)
+libdrmemorylib.so!replace_malloc
+aula2-slide27!main
+
+## Mod+offs-style suppression for Error #2:
+LEAK
+name=Error #2 (update to meaningful name)
+<libdrmemorylib.so+0x49bc0>
+<aula2-slide27+0x121c>
+

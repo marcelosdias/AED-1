@@ -1,0 +1,22 @@
+# File for suppressing errors found in pid 27858: "teste"
+
+# Suppression for Error #1
+POSSIBLE LEAK
+name=Error #1 (update to meaningful name)
+libdrmemorylib.so!replace_malloc
+
+## Mod+offs-style suppression for Error #1:
+POSSIBLE LEAK
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.so+0x49bc0>
+
+# Suppression for Error #2
+POSSIBLE LEAK
+name=Error #2 (update to meaningful name)
+libdrmemorylib.so!replace_calloc
+
+## Mod+offs-style suppression for Error #2:
+POSSIBLE LEAK
+name=Error #2 (update to meaningful name)
+<libdrmemorylib.so+0x4a430>
+

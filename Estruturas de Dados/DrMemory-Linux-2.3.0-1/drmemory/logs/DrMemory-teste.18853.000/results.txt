@@ -1,0 +1,76 @@
+Dr. Memory version 2.3.0 build 1 built on Feb  6 2020 01:44:52
+Dr. Memory results for pid 18853: "teste"
+Recorded 17 suppression(s) from default /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/bin64/suppress-default.txt
+
+WARNING: application is missing line number information.
+
+Error #1: UNINITIALIZED READ: reading register al
+# 0 replace_strlen               [/drmemory_package/drmemory/replace.c:412]
+# 1 main 
+Note: @0:00:00.318 in thread 18853
+Note: instruction: test   %al %al
+
+Error #2: REACHABLE LEAK 1441 direct bytes 0x00007f2997b221a0-0x00007f2997b22741 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #3: REACHABLE LEAK 1185 direct bytes 0x00007f2997b22770-0x00007f2997b22c11 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #4: REACHABLE LEAK 16 direct bytes 0x00007f2997b22c40-0x00007f2997b22c50 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #5: REACHABLE LEAK 157 direct bytes 0x00007f2997b22c70-0x00007f2997b22d0d + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #6: REACHABLE LEAK 40 direct bytes 0x00007f2997b22d30-0x00007f2997b22d58 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #7: REACHABLE LEAK 320 direct bytes 0x00007f2997b22d80-0x00007f2997b22ec0 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #8: REACHABLE LEAK 32 direct bytes 0x00007f2997b22ee0-0x00007f2997b22f00 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #9: REACHABLE LEAK 1194 direct bytes 0x00007f2997b22f20-0x00007f2997b233ca + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #10: REACHABLE LEAK 32 direct bytes 0x00007f2997b233f0-0x00007f2997b23410 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #11: REACHABLE LEAK 40 direct bytes 0x00007f2997b23430-0x00007f2997b23458 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #12: REACHABLE LEAK 56 direct bytes 0x00007f2997b23480-0x00007f2997b234b8 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #13: REACHABLE LEAK 120 direct bytes 0x00007f2997b234e0-0x00007f2997b23558 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #14: REACHABLE LEAK 1040 direct bytes 0x00007f2997b23a10-0x00007f2997b23e20 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #15: REACHABLE LEAK 1024 direct bytes 0x00007f2997b25020-0x00007f2997b25420 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+Error #16: REACHABLE LEAK 1024 direct bytes 0x00007f2997b25440-0x00007f2997b25840 + 0 indirect bytes
+<memory was allocated before tool took control>
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+	Error #   1:     28
+	Error #  13:      4
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      1 unique,    28 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+     15 unique,    18 total,   8777 byte(s) of still-reachable allocation(s)
+NO ERRORS IGNORED
+Details: /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-teste.18853.000/results.txt

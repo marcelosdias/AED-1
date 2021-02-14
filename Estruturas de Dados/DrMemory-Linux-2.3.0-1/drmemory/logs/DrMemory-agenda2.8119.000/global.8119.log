@@ -1,0 +1,42 @@
+process=8119, parent=8051
+Dr. Memory version 2.3.0 build 1 built on Feb  6 2020 01:44:52
+start time: 3679740:39:49.548 == 12:39:49.548 10/13/2020
+Recorded 17 suppression(s) from default /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/bin64/suppress-default.txt
+new thread #0 id=8119
+
+module load event: "libdrmemorylib.so" 0x00007f634223f000-0x00007f634239e000 modid: 1 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/bin64/release/libdrmemorylib.so
+
+module load event: "agenda2" 0x00007f635223f000-0x00007f6352244000 modid: 2 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/agenda2
+
+module load event: "ld-linux-x86-64.so.2" 0x00007f6356214000-0x00007f6356244000 modid: 3 /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/ld-2.31.so
+
+module load event: "libdynamorio.so" 0x00007f635624a000-0x00007f6356462000 modid: 4 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/dynamorio/lib64/release/libdynamorio.so
+WARNING: unable to open [vdso]
+
+module load event: "linux-vdso.so.1" 0x00007ffd609a9000-0x00007ffd609aa000 modid: 5 [vdso]
+
+module load event: "libc.so.6" 0x00007f6355c3f000-0x00007f6355e31000 modid: 6 /usr/lib/x86_64-linux-gnu/libc-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/libc-2.31.so
+
+NEW THREAD: main thread 8119
+
+
+Error #1: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x00007f6352248868-0x00007f6352248869 1 byte(s)
+# 0 replace_strlen    [/drmemory_package/drmemory/replace.c:412] (0x00007f634231c5e8 <libdrmemorylib.so+0xdd5e8>) modid:1
+# 1 imprimir (0x00007f6352240787 <agenda2+0x1787>) modid:2
+# 2 main    (0x00007f635224039b <agenda2+0x139b>) modid:2
+Note: @0:00:14.137 in thread 8119
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x00007f6352248860-0x00007f6352248868
+Note: instruction: movzx  (%rbx) -> %eax
+	error end
+
+Error #2: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x00007f6352248868-0x00007f6352248869 1 byte(s)
+# 0 imprimir (0x00007f63522407c5 <agenda2+0x17c5>) modid:2
+# 1 main    (0x00007f635224039b <agenda2+0x139b>) modid:2
+Note: @0:00:14.144 in thread 8119
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x00007f6352248860-0x00007f6352248868
+Note: instruction: movzx  (%rax) -> %eax
+	error end

@@ -1,0 +1,118 @@
+process=31501, parent=31292
+Dr. Memory version 2.3.0 build 1 built on Feb  6 2020 01:44:52
+start time: 3679746:15:14.653 == 18:15:14.653 10/13/2020
+Recorded 17 suppression(s) from default /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/bin64/suppress-default.txt
+new thread #0 id=31501
+WARNING: symbol cache file has wrong version
+
+module load event: "libdrmemorylib.so" 0x00007f42ebe99000-0x00007f42ebff8000 modid: 1 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/bin64/release/libdrmemorylib.so
+WARNING: symbol cache file has wrong version
+
+module load event: "teste" 0x00007f42fbe99000-0x00007f42fbe9e000 modid: 2 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/teste
+WARNING: symbol cache file has wrong version
+
+module load event: "ld-linux-x86-64.so.2" 0x00007f42ffe6e000-0x00007f42ffe9e000 modid: 3 /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: symbol cache file has wrong version
+
+module load event: "libdynamorio.so" 0x00007f42ffea4000-0x00007f43000bc000 modid: 4 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/dynamorio/lib64/release/libdynamorio.so
+WARNING: unable to open [vdso]
+WARNING: symbol cache file has wrong version
+
+module load event: "linux-vdso.so.1" 0x00007ffdbd8af000-0x00007ffdbd8b0000 modid: 5 [vdso]
+
+module load event: "libc.so.6" 0x00007f42ff899000-0x00007f42ffa8b000 modid: 6 /usr/lib/x86_64-linux-gnu/libc-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/libc-2.31.so
+
+Error #1: REACHABLE LEAK 1441 direct bytes 0x00007f42fbe9f1a0-0x00007f42fbe9f741 + 0 indirect bytes
+<memory was allocated before tool took control>
+	error end
+
+Error #2: REACHABLE LEAK 1185 direct bytes 0x00007f42fbe9f770-0x00007f42fbe9fc11 + 0 indirect bytes
+<memory was allocated before tool took control>
+	error end
+
+Error #3: REACHABLE LEAK 16 direct bytes 0x00007f42fbe9fc40-0x00007f42fbe9fc50 + 0 indirect bytes
+<memory was allocated before tool took control>
+	error end
+
+Error #4: REACHABLE LEAK 157 direct bytes 0x00007f42fbe9fc70-0x00007f42fbe9fd0d + 0 indirect bytes
+<memory was allocated before tool took control>
+	error end
+
+Error #5: REACHABLE LEAK 40 direct bytes 0x00007f42fbe9fd30-0x00007f42fbe9fd58 + 0 indirect bytes
+<memory was allocated before tool took control>
+	error end
+
+Error #6: REACHABLE LEAK 320 direct bytes 0x00007f42fbe9fd80-0x00007f42fbe9fec0 + 0 indirect bytes
+<memory was allocated before tool took control>
+	error end
+
+Error #7: REACHABLE LEAK 32 direct bytes 0x00007f42fbe9fee0-0x00007f42fbe9ff00 + 0 indirect bytes
+<memory was allocated before tool took control>
+	error end
+
+Error #8: REACHABLE LEAK 1194 direct bytes 0x00007f42fbe9ff20-0x00007f42fbea03ca + 0 indirect bytes
+<memory was allocated before tool took control>
+	error end
+
+Error #9: REACHABLE LEAK 32 direct bytes 0x00007f42fbea03f0-0x00007f42fbea0410 + 0 indirect bytes
+<memory was allocated before tool took control>
+	error end
+
+Error #10: REACHABLE LEAK 40 direct bytes 0x00007f42fbea0430-0x00007f42fbea0458 + 0 indirect bytes
+<memory was allocated before tool took control>
+	error end
+
+Error #11: REACHABLE LEAK 56 direct bytes 0x00007f42fbea0480-0x00007f42fbea04b8 + 0 indirect bytes
+<memory was allocated before tool took control>
+	error end
+
+Error #12: REACHABLE LEAK 120 direct bytes 0x00007f42fbea04e0-0x00007f42fbea0558 + 0 indirect bytes
+<memory was allocated before tool took control>
+	error end
+
+Error #13: REACHABLE LEAK 1040 direct bytes 0x00007f42fbea0a10-0x00007f42fbea0e20 + 0 indirect bytes
+<memory was allocated before tool took control>
+	error end
+
+Error #14: REACHABLE LEAK 1024 direct bytes 0x00007f42fbea2020-0x00007f42fbea2420 + 0 indirect bytes
+<memory was allocated before tool took control>
+	error end
+
+Error #15: REACHABLE LEAK 1024 direct bytes 0x00007f42fbea2440-0x00007f42fbea2840 + 0 indirect bytes
+<memory was allocated before tool took control>
+	error end
+
+DUPLICATE ERROR COUNTS:
+	Error #  12:      4
+
+SUPPRESSIONS USED:
+	    16x: default i#79 (ld-linux)
+	     2x (leaked    4504 bytes): default (ld-linux stores index+1)
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+     15 unique,    18 total,   8777 byte(s) of still-reachable allocation(s)
+NO ERRORS IGNORED
+      0 ignored assumed-innocuous system leak(s)
+Details: /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-teste.31501.000/results.txt
+
+DUPLICATE POTENTIAL ERROR COUNTS:
+
+POTENTIAL ERRORS FOUND:
+      0 unique,     0 total potential unaddressable access(es)
+      0 unique,     0 total potential uninitialized access(es)
+      0 unique,     0 total potential invalid heap argument(s)
+      0 unique,     0 total potential warning(s)
+      0 unique,     0 total,      0 byte(s) of potential leak(s)
+      0 unique,     0 total,      0 byte(s) of potential possible leak(s)
+      0 unique,     0 total,      0 byte(s) of potential still-reachable allocation(s)
+Details: /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-teste.31501.000/potential_errors.txt
+Exiting @0:00:04.742 in thread 31501
+LOG END

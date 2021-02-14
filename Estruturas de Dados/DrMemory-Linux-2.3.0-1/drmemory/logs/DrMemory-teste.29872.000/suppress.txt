@@ -1,0 +1,78 @@
+# File for suppressing errors found in pid 29872: "teste"
+
+# Suppression for Error #1
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+libdrmemorylib.so!replace_strcmp
+teste!remover
+teste!main
+
+## Mod+offs-style suppression for Error #1:
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.so+0xdd7d8>
+<teste+0x15df>
+<teste+0x1371>
+
+# Suppression for Error #2
+UNINITIALIZED READ
+name=Error #2 (update to meaningful name)
+libdrmemorylib.so!replace_strlen
+teste!remover
+teste!main
+
+## Mod+offs-style suppression for Error #2:
+UNINITIALIZED READ
+name=Error #2 (update to meaningful name)
+<libdrmemorylib.so+0xdd5eb>
+<teste+0x1631>
+<teste+0x1371>
+
+# Suppression for Error #3
+UNINITIALIZED READ
+name=Error #3 (update to meaningful name)
+libdrmemorylib.so!replace_strcpy
+teste!remover
+teste!main
+
+## Mod+offs-style suppression for Error #3:
+UNINITIALIZED READ
+name=Error #3 (update to meaningful name)
+<libdrmemorylib.so+0xdda54>
+<teste+0x167e>
+<teste+0x1371>
+
+# Suppression for Error #4
+UNINITIALIZED READ
+name=Error #4 (update to meaningful name)
+libdrmemorylib.so!replace_strcpy
+teste!remover
+teste!main
+
+## Mod+offs-style suppression for Error #4:
+UNINITIALIZED READ
+name=Error #4 (update to meaningful name)
+<libdrmemorylib.so+0xdda54>
+<teste+0x16fc>
+<teste+0x1371>
+
+# Suppression for Error #5
+POSSIBLE LEAK
+name=Error #5 (update to meaningful name)
+libdrmemorylib.so!replace_malloc
+
+## Mod+offs-style suppression for Error #5:
+POSSIBLE LEAK
+name=Error #5 (update to meaningful name)
+<libdrmemorylib.so+0x49bc0>
+
+# Suppression for Error #6
+POSSIBLE LEAK
+name=Error #6 (update to meaningful name)
+libdrmemorylib.so!replace_calloc
+
+## Mod+offs-style suppression for Error #6:
+POSSIBLE LEAK
+name=Error #6 (update to meaningful name)
+<libdrmemorylib.so+0x4a430>
+

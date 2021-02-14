@@ -1,0 +1,16 @@
+# File for suppressing errors found in pid 10679: "teste"
+
+# Suppression for Error #1
+LEAK
+name=Error #1 (update to meaningful name)
+libdrmemorylib.so!replace_malloc
+teste!insere
+teste!main
+
+## Mod+offs-style suppression for Error #1:
+LEAK
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.so+0x49bc0>
+<teste+0x148d>
+<teste+0x1367>
+

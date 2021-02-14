@@ -1,0 +1,90 @@
+process=44495, parent=43782
+Dr. Memory version 2.3.0 build 1 built on Feb  6 2020 01:44:52
+start time: 3680183:52:54.983 == 23:52:54.983 10/31/2020
+Recorded 17 suppression(s) from default /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/Atividades da Terceira Semana/DrMemory-Linux-2.3.0-1/bin64/suppress-default.txt
+new thread #0 id=44495
+WARNING: symbol cache file has wrong version
+
+module load event: "libdrmemorylib.so" 0x00007f6b0c7fd000-0x00007f6b0c95c000 modid: 1 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/Atividades da Terceira Semana/DrMemory-Linux-2.3.0-1/bin64/release/libdrmemorylib.so
+WARNING: symbol cache file has wrong version
+
+module load event: "exercicio7" 0x00007f6b1c7fd000-0x00007f6b1c802000 modid: 2 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/Atividades da Terceira Semana/exercicio7
+WARNING: symbol cache file has wrong version
+
+module load event: "ld-linux-x86-64.so.2" 0x00007f6b207d2000-0x00007f6b20802000 modid: 3 /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: symbol cache file has wrong version
+
+module load event: "libdynamorio.so" 0x00007f6b20808000-0x00007f6b20a20000 modid: 4 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/Atividades da Terceira Semana/DrMemory-Linux-2.3.0-1/dynamorio/lib64/release/libdynamorio.so
+WARNING: unable to open [vdso]
+WARNING: symbol cache file has wrong version
+
+module load event: "linux-vdso.so.1" 0x00007ffce05df000-0x00007ffce05e0000 modid: 5 [vdso]
+
+module load event: "libc.so.6" 0x00007f6b201fd000-0x00007f6b203ef000 modid: 6 /usr/lib/x86_64-linux-gnu/libc-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/libc-2.31.so
+
+NEW THREAD: main thread 44495
+
+
+Error #1: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x00007f6b1c806884-0x00007f6b1c806888 4 byte(s)
+# 0 main       (0x00007f6b1c7fe305 <exercicio7+0x1305>) modid:2
+Note: @0:00:05.590 in thread 44495
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x00007f6b1c806870-0x00007f6b1c806884
+Note: instruction: mov    (%rax) -> %eax
+	error end
+
+Error #2: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x00007f6b1c806884-0x00007f6b1c806888 4 byte(s)
+# 0 main       (0x00007f6b1c7fe2ec <exercicio7+0x12ec>) modid:2
+Note: @0:00:05.590 in thread 44495
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x00007f6b1c806870-0x00007f6b1c806884
+Note: instruction: mov    (%rax) -> %eax
+	error end
+
+Error #3: INVALID HEAP ARGUMENT to free 0x00007f6b1c806898
+# 0 replace_free      [/drmemory_package/common/alloc_replace.c:2707] (0x00007f6b0c8467a0 <libdrmemorylib.so+0x497a0>) modid:1
+# 1 main       (0x00007f6b1c7fe317 <exercicio7+0x1317>) modid:2
+Note: @0:00:05.595 in thread 44495
+Note: prev lower malloc:  0x00007f6b1c806870-0x00007f6b1c806884
+	error end
+
+Error #4: LEAK 20 direct bytes 0x00007f6b1c806870-0x00007f6b1c806884 + 0 indirect bytes
+# 0 replace_malloc    [/drmemory_package/common/alloc_replace.c:2577] (0x00007f6b0c846bc0 <libdrmemorylib.so+0x49bc0>) modid:1
+# 1 main       (0x00007f6b1c7fe25e <exercicio7+0x125e>) modid:2
+	error end
+
+DUPLICATE ERROR COUNTS:
+	Error #   1:      6
+	Error #   2:      5
+
+SUPPRESSIONS USED:
+	    20x: default i#79 (ld-linux)
+	     2x (leaked    4504 bytes): default (ld-linux stores index+1)
+
+ERRORS FOUND:
+      2 unique,    11 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      1 unique,     1 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      1 unique,     1 total,     20 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      0 ignored assumed-innocuous system leak(s)
+     15 unique,    18 total,   8801 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/Atividades da Terceira Semana/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-exercicio7.44495.000/results.txt
+
+DUPLICATE POTENTIAL ERROR COUNTS:
+
+POTENTIAL ERRORS FOUND:
+      0 unique,     0 total potential unaddressable access(es)
+      0 unique,     0 total potential uninitialized access(es)
+      0 unique,     0 total potential invalid heap argument(s)
+      0 unique,     0 total potential warning(s)
+      0 unique,     0 total,      0 byte(s) of potential leak(s)
+      0 unique,     0 total,      0 byte(s) of potential possible leak(s)
+Details: /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/Atividades da Terceira Semana/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-exercicio7.44495.000/potential_errors.txt
+Exiting @0:00:05.633 in thread 44495
+LOG END

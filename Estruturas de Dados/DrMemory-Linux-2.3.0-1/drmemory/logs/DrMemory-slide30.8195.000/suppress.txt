@@ -1,0 +1,26 @@
+# File for suppressing errors found in pid 8195: "slide30"
+
+# Suppression for Error #1
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+slide30!colunaMatriz
+slide30!main
+
+## Mod+offs-style suppression for Error #1:
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+<slide30+0x17c2>
+<slide30+0x13e1>
+
+# Suppression for Error #2
+UNINITIALIZED READ
+name=Error #2 (update to meaningful name)
+slide30!colunaMatriz
+slide30!main
+
+## Mod+offs-style suppression for Error #2:
+UNINITIALIZED READ
+name=Error #2 (update to meaningful name)
+<slide30+0x17b2>
+<slide30+0x13e1>
+

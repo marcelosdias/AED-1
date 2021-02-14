@@ -1,0 +1,27 @@
+Dr. Memory version 2.3.0 build 1 built on Feb  6 2020 01:44:52
+Dr. Memory results for pid 30655: "teste"
+Recorded 17 suppression(s) from default /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/bin64/suppress-default.txt
+
+WARNING: application is missing line number information.
+
+Error #1: POSSIBLE LEAK 4232 bytes 
+# 0 replace_malloc               [/drmemory_package/common/alloc_replace.c:2577]
+
+Error #2: POSSIBLE LEAK 272 bytes 
+# 0 replace_calloc               [/drmemory_package/common/alloc_replace.c:2617]
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      2 unique,     2 total,   4504 byte(s) of possible leak(s)
+Details: /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-teste.30655.000/results.txt

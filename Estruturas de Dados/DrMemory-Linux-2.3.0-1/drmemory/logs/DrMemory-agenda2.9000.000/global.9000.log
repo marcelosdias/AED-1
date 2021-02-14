@@ -1,0 +1,68 @@
+process=9000, parent=8598
+Dr. Memory version 2.3.0 build 1 built on Feb  6 2020 01:44:52
+start time: 3679740:47:01.901 == 12:47:01.901 10/13/2020
+Recorded 17 suppression(s) from default /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/bin64/suppress-default.txt
+new thread #0 id=9000
+WARNING: symbol cache file has wrong version
+
+module load event: "libdrmemorylib.so" 0x00007f604abeb000-0x00007f604ad4a000 modid: 1 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/bin64/release/libdrmemorylib.so
+WARNING: symbol cache file has wrong version
+
+module load event: "agenda2" 0x00007f605abeb000-0x00007f605abf0000 modid: 2 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/agenda2
+WARNING: symbol cache file has wrong version
+
+module load event: "ld-linux-x86-64.so.2" 0x00007f605ebc0000-0x00007f605ebf0000 modid: 3 /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: symbol cache file has wrong version
+
+module load event: "libdynamorio.so" 0x00007f605ebf6000-0x00007f605ee0e000 modid: 4 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/dynamorio/lib64/release/libdynamorio.so
+WARNING: unable to open [vdso]
+WARNING: symbol cache file has wrong version
+
+module load event: "linux-vdso.so.1" 0x00007ffdf2ad9000-0x00007ffdf2ada000 modid: 5 [vdso]
+
+module load event: "libc.so.6" 0x00007f605e5eb000-0x00007f605e7dd000 modid: 6 /usr/lib/x86_64-linux-gnu/libc-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/libc-2.31.so
+
+NEW THREAD: main thread 9000
+
+
+Error #1: UNINITIALIZED READ: reading register al
+# 0 replace_strlen    [/drmemory_package/drmemory/replace.c:412] (0x00007f604acc85eb <libdrmemorylib.so+0xdd5eb>) modid:1
+# 1 insere  (0x00007f605abec488 <agenda2+0x1488>) modid:2
+# 2 main    (0x00007f605abec367 <agenda2+0x1367>) modid:2
+Note: @0:00:06.351 in thread 9000
+Note: instruction: test   %al %al
+	error end
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+	    20x: default i#79 (ld-linux)
+	     2x (leaked    4504 bytes): default (ld-linux stores index+1)
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      1 unique,     1 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      0 ignored assumed-innocuous system leak(s)
+     16 unique,    19 total,   8781 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-agenda2.9000.000/results.txt
+
+DUPLICATE POTENTIAL ERROR COUNTS:
+
+POTENTIAL ERRORS FOUND:
+      0 unique,     0 total potential unaddressable access(es)
+      0 unique,     0 total potential uninitialized access(es)
+      0 unique,     0 total potential invalid heap argument(s)
+      0 unique,     0 total potential warning(s)
+      0 unique,     0 total,      0 byte(s) of potential leak(s)
+      0 unique,     0 total,      0 byte(s) of potential possible leak(s)
+Details: /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-agenda2.9000.000/potential_errors.txt
+Exiting @0:00:45.266 in thread 9000
+LOG END

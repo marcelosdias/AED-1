@@ -1,0 +1,70 @@
+# File for suppressing errors found in pid 7559: "a"
+
+# Suppression for Error #1
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+a!insere
+a!main
+
+## Mod+offs-style suppression for Error #1:
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+<a+0x13c0>
+<a+0x12cb>
+
+# Suppression for Error #2
+UNINITIALIZED READ
+name=Error #2 (update to meaningful name)
+a!reset
+a!main
+
+## Mod+offs-style suppression for Error #2:
+UNINITIALIZED READ
+name=Error #2 (update to meaningful name)
+<a+0x1371>
+<a+0x1338>
+
+# Suppression for Error #3
+UNADDRESSABLE ACCESS
+name=Error #3 (update to meaningful name)
+a!reset
+a!main
+
+## Mod+offs-style suppression for Error #3:
+UNADDRESSABLE ACCESS
+name=Error #3 (update to meaningful name)
+<a+0x1355>
+<a+0x1338>
+
+# Suppression for Error #4
+LEAK
+name=Error #4 (update to meaningful name)
+libdrmemorylib.so!replace_malloc
+a!criaNodo
+a!insere
+a!main
+
+## Mod+offs-style suppression for Error #4:
+LEAK
+name=Error #4 (update to meaningful name)
+<libdrmemorylib.so+0x49bc0>
+<a+0x1417>
+<a+0x139c>
+<a+0x12cb>
+
+# Suppression for Error #5
+LEAK
+name=Error #5 (update to meaningful name)
+libdrmemorylib.so!replace_malloc
+a!ordena
+a!menuOrdenar
+a!main
+
+## Mod+offs-style suppression for Error #5:
+LEAK
+name=Error #5 (update to meaningful name)
+<libdrmemorylib.so+0x49bc0>
+<a+0x1709>
+<a+0x19f5>
+<a+0x1318>
+

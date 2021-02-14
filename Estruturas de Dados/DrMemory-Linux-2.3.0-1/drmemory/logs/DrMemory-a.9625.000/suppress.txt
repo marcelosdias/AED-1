@@ -1,0 +1,14 @@
+# File for suppressing errors found in pid 9625: "a"
+
+# Suppression for Error #1
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+a!insere
+a!main
+
+## Mod+offs-style suppression for Error #1:
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+<a+0x13de>
+<a+0x12d5>
+

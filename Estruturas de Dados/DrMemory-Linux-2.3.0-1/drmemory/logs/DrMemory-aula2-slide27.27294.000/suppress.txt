@@ -1,0 +1,64 @@
+# File for suppressing errors found in pid 27294: "aula2-slide27"
+
+# Suppression for Error #1
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+aula2-slide27!main
+
+## Mod+offs-style suppression for Error #1:
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+<aula2-slide27+0x130a>
+
+# Suppression for Error #2
+UNINITIALIZED READ
+name=Error #2 (update to meaningful name)
+libc.so.6!*
+libc.so.6!_IO_printf
+libc.so.6!__libc_start_main
+aula2-slide27!_start
+
+## Mod+offs-style suppression for Error #2:
+UNINITIALIZED READ
+name=Error #2 (update to meaningful name)
+<libc.so.6+0x7aad5>
+<libc.so.6+0x64ebf>
+<libc.so.6+0x270b3>
+<aula2-slide27+0x114e>
+
+# Suppression for Error #3
+UNADDRESSABLE ACCESS
+name=Error #3 (update to meaningful name)
+aula2-slide27!main
+
+## Mod+offs-style suppression for Error #3:
+UNADDRESSABLE ACCESS
+name=Error #3 (update to meaningful name)
+<aula2-slide27+0x1308>
+
+# Suppression for Error #4
+INVALID HEAP ARGUMENT
+name=Error #4 (update to meaningful name)
+libdrmemorylib.so!replace_free
+aula2-slide27!main
+
+## Mod+offs-style suppression for Error #4:
+INVALID HEAP ARGUMENT
+name=Error #4 (update to meaningful name)
+<libdrmemorylib.so+0x497a0>
+<aula2-slide27+0x1324>
+
+# Suppression for Error #5
+LEAK
+name=Error #5 (update to meaningful name)
+libdrmemorylib.so!replace_malloc
+aula2-slide27!realloc2
+aula2-slide27!main
+
+## Mod+offs-style suppression for Error #5:
+LEAK
+name=Error #5 (update to meaningful name)
+<libdrmemorylib.so+0x49bc0>
+<aula2-slide27+0x1362>
+<aula2-slide27+0x12cd>
+

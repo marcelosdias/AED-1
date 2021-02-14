@@ -1,0 +1,64 @@
+# File for suppressing errors found in pid 30048: "teste"
+
+# Suppression for Error #1
+UNADDRESSABLE ACCESS
+name=Error #1 (update to meaningful name)
+libdrmemorylib.so!replace_strcpy
+teste!remover
+teste!main
+
+## Mod+offs-style suppression for Error #1:
+UNADDRESSABLE ACCESS
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.so+0xdda58>
+<teste+0x166a>
+<teste+0x1371>
+
+# Suppression for Error #2
+UNADDRESSABLE ACCESS
+name=Error #2 (update to meaningful name)
+libdrmemorylib.so!replace_strcpy
+teste!remover
+teste!main
+
+## Mod+offs-style suppression for Error #2:
+UNADDRESSABLE ACCESS
+name=Error #2 (update to meaningful name)
+<libdrmemorylib.so+0xdda4f>
+<teste+0x16e8>
+<teste+0x1371>
+
+# Suppression for Error #3
+UNADDRESSABLE ACCESS
+name=Error #3 (update to meaningful name)
+libdrmemorylib.so!replace_strcpy
+teste!remover
+teste!main
+
+## Mod+offs-style suppression for Error #3:
+UNADDRESSABLE ACCESS
+name=Error #3 (update to meaningful name)
+<libdrmemorylib.so+0xdda58>
+<teste+0x16e8>
+<teste+0x1371>
+
+# Suppression for Error #4
+POSSIBLE LEAK
+name=Error #4 (update to meaningful name)
+libdrmemorylib.so!replace_malloc
+
+## Mod+offs-style suppression for Error #4:
+POSSIBLE LEAK
+name=Error #4 (update to meaningful name)
+<libdrmemorylib.so+0x49bc0>
+
+# Suppression for Error #5
+POSSIBLE LEAK
+name=Error #5 (update to meaningful name)
+libdrmemorylib.so!replace_calloc
+
+## Mod+offs-style suppression for Error #5:
+POSSIBLE LEAK
+name=Error #5 (update to meaningful name)
+<libdrmemorylib.so+0x4a430>
+

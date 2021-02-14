@@ -1,0 +1,170 @@
+Dr. Memory version 2.3.0 build 1 built on Feb  6 2020 01:44:52
+Dr. Memory results for pid 10963: "agenda2"
+Recorded 17 suppression(s) from default /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/bin64/suppress-default.txt
+
+WARNING: application is missing line number information.
+
+Error #1: UNINITIALIZED READ: reading register edx
+# 0 libc.so.6!toupper              +0xd      (0x00007f6bdf2cb16d <libc.so.6+0x3716d>)
+# 1 libc.so.6!__libc_start_main    +0xf2     (0x00007f6bdf2bb0b3 <libc.so.6+0x270b3>)
+# 2 _start 
+Note: @0:00:00.299 in thread 10963
+Note: instruction: cmp    %edx $0x0000017f
+
+Error #2: UNINITIALIZED READ: reading register rax
+# 0 libc.so.6!toupper              +0x27     (0x00007f6bdf2cb187 <libc.so.6+0x37187>)
+# 1 libc.so.6!__libc_start_main    +0xf2     (0x00007f6bdf2bb0b3 <libc.so.6+0x270b3>)
+# 2 _start 
+Note: @0:00:00.300 in thread 10963
+Note: instruction: mov    0x00000200(%rdx,%rax,4) -> %eax
+
+Error #3: UNADDRESSABLE ACCESS beyond heap bounds: writing 0x00007f6bdb89d8c8-0x00007f6bdb89d8c9 1 byte(s) within 0x00007f6bdb89d8c7-0x00007f6bdb89d8c9
+# 0 insert_name
+# 1 menu   
+# 2 main   
+Note: @0:00:17.531 in thread 10963
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x00007f6bdb89d8c0-0x00007f6bdb89d8c8
+Note: instruction: data16 mov    $0x003b -> (%rax)
+
+Error #4: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x00007f6bdb89d8c8-0x00007f6bdb89d8c9 1 byte(s)
+# 0 replace_strlen               [/drmemory_package/drmemory/replace.c:412]
+# 1 insert_name
+# 2 menu   
+# 3 main   
+Note: @0:00:30.037 in thread 10963
+Note: next higher malloc: 0x00007f6bdb89d8f0-0x00007f6bdb89d922
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x00007f6bdb89d8c0-0x00007f6bdb89d8c8
+Note: instruction: movzx  (%rbx) -> %eax
+
+Error #5: UNINITIALIZED READ: reading register al
+# 0 replace_strcat               [/drmemory_package/drmemory/replace.c:645]
+# 1 insert_name
+# 2 menu   
+# 3 main   
+Note: @0:00:30.040 in thread 10963
+Note: instruction: test   %al %al
+
+Error #6: UNADDRESSABLE ACCESS beyond heap bounds: writing 0x00007f6bdb89d8cd-0x00007f6bdb89d8ce 1 byte(s) within 0x00007f6bdb89d8cc-0x00007f6bdb89d8ce
+# 0 insert_name
+# 1 menu   
+# 2 main   
+Note: @0:00:30.042 in thread 10963
+Note: next higher malloc: 0x00007f6bdb89d8f0-0x00007f6bdb89d922
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x00007f6bdb89d8c0-0x00007f6bdb89d8cd
+Note: instruction: data16 mov    $0x003b -> (%rax)
+
+Error #7: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x00007f6bdb89d8cd-0x00007f6bdb89d8ce 1 byte(s)
+# 0 replace_strlen               [/drmemory_package/drmemory/replace.c:412]
+# 1 list_names
+# 2 menu   
+# 3 main   
+Note: @0:00:41.980 in thread 10963
+Note: next higher malloc: 0x00007f6bdb89d8f0-0x00007f6bdb89d922
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x00007f6bdb89d8c0-0x00007f6bdb89d8cd
+Note: instruction: movzx  (%rbx) -> %eax
+
+Error #8: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x00007f6bdb89d8cd-0x00007f6bdb89d8ce 1 byte(s)
+# 0 replace_strlen               [/drmemory_package/drmemory/replace.c:412]
+# 1 remove_name
+# 2 menu   
+# 3 main   
+Note: @0:00:49.622 in thread 10963
+Note: next higher malloc: 0x00007f6bdb89d8f0-0x00007f6bdb89d922
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x00007f6bdb89d8c0-0x00007f6bdb89d8cd
+Note: instruction: movzx  (%rbx) -> %eax
+
+Error #9: UNINITIALIZED READ: reading register al
+# 0 replace_strlen               [/drmemory_package/drmemory/replace.c:412]
+# 1 remove_name
+# 2 menu   
+# 3 main   
+Note: @0:00:49.628 in thread 10963
+Note: instruction: test   %al %al
+
+Error #10: UNINITIALIZED READ: reading register al
+# 0 replace_strcpy               [/drmemory_package/drmemory/replace.c:596]
+# 1 remove_name
+# 2 menu   
+# 3 main   
+Note: @0:00:49.628 in thread 10963
+Note: instruction: test   %al %al
+
+Error #11: UNADDRESSABLE ACCESS beyond heap bounds: writing 0x00007f6bdb89da18-0x00007f6bdb89da19 1 byte(s) within 0x00007f6bdb89da17-0x00007f6bdb89da19
+# 0 remove_name
+# 1 menu   
+# 2 main   
+Note: @0:00:49.630 in thread 10963
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x00007f6bdb89da10-0x00007f6bdb89da18
+Note: instruction: data16 mov    $0x003b -> (%rax)
+
+Error #12: UNINITIALIZED READ: reading register al
+# 0 replace_strcmp               [/drmemory_package/drmemory/replace.c:494]
+# 1 remove_name
+# 2 menu   
+# 3 main   
+Note: @0:00:49.631 in thread 10963
+Note: instruction: test   %al %al
+
+Error #13: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x00007f6bdb89d8cd-0x00007f6bdb89d8ce 1 byte(s)
+# 0 replace_strlen               [/drmemory_package/drmemory/replace.c:412]
+# 1 remove_name
+# 2 menu   
+# 3 main   
+Note: @0:00:49.632 in thread 10963
+Note: next higher malloc: 0x00007f6bdb89d8f0-0x00007f6bdb89d922
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x00007f6bdb89d8c0-0x00007f6bdb89d8cd
+Note: instruction: movzx  (%rbx) -> %eax
+
+Error #14: LEAK 50 direct bytes 0x00007f6bdb89d860-0x00007f6bdb89d892 + 0 indirect bytes
+# 0 replace_malloc               [/drmemory_package/common/alloc_replace.c:2577]
+# 1 insert_name
+# 2 menu   
+# 3 main   
+
+Error #15: LEAK 10 direct bytes 0x00007f6bdb89d8c0-0x00007f6bdb89d8ca + 0 indirect bytes
+# 0 replace_malloc               [/drmemory_package/common/alloc_replace.c:2577]
+# 1 insert_name
+# 2 menu   
+# 3 main   
+
+Error #16: LEAK 50 direct bytes 0x00007f6bdb89d950-0x00007f6bdb89d982 + 0 indirect bytes
+# 0 replace_malloc               [/drmemory_package/common/alloc_replace.c:2577]
+# 1 remove_name
+# 2 menu   
+# 3 main   
+
+Error #17: LEAK 50 direct bytes 0x00007f6bdb89d9b0-0x00007f6bdb89d9e2 + 0 indirect bytes
+# 0 replace_malloc               [/drmemory_package/common/alloc_replace.c:2577]
+# 1 remove_name
+# 2 menu   
+# 3 main   
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+	Error #   7:      3
+	Error #   8:      3
+	Error #  14:      2
+	Error #  17:      2
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      7 unique,    11 total unaddressable access(es)
+      6 unique,     6 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      4 unique,     6 total,    260 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+     16 unique,    19 total,   8785 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-agenda2.10963.000/results.txt

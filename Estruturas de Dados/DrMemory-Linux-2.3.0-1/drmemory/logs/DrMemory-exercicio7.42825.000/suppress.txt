@@ -1,0 +1,62 @@
+# File for suppressing errors found in pid 42825: "exercicio7"
+
+# Suppression for Error #1
+UNADDRESSABLE ACCESS
+name=Error #1 (update to meaningful name)
+exercicio7!retiraRepetidos
+exercicio7!main
+
+## Mod+offs-style suppression for Error #1:
+UNADDRESSABLE ACCESS
+name=Error #1 (update to meaningful name)
+<exercicio7+0x140b>
+<exercicio7+0x129e>
+
+# Suppression for Error #2
+UNADDRESSABLE ACCESS
+name=Error #2 (update to meaningful name)
+exercicio7!retiraRepetidos
+exercicio7!main
+
+## Mod+offs-style suppression for Error #2:
+UNADDRESSABLE ACCESS
+name=Error #2 (update to meaningful name)
+<exercicio7+0x1474>
+<exercicio7+0x129e>
+
+# Suppression for Error #3
+UNADDRESSABLE ACCESS
+name=Error #3 (update to meaningful name)
+exercicio7!main
+
+## Mod+offs-style suppression for Error #3:
+UNADDRESSABLE ACCESS
+name=Error #3 (update to meaningful name)
+<exercicio7+0x12c9>
+
+# Suppression for Error #4
+INVALID HEAP ARGUMENT
+name=Error #4 (update to meaningful name)
+libdrmemorylib.so!replace_free
+exercicio7!main
+
+## Mod+offs-style suppression for Error #4:
+INVALID HEAP ARGUMENT
+name=Error #4 (update to meaningful name)
+<libdrmemorylib.so+0x497a0>
+<exercicio7+0x12db>
+
+# Suppression for Error #5
+LEAK
+name=Error #5 (update to meaningful name)
+libdrmemorylib.so!replace_malloc
+exercicio7!retiraRepetidos
+exercicio7!main
+
+## Mod+offs-style suppression for Error #5:
+LEAK
+name=Error #5 (update to meaningful name)
+<libdrmemorylib.so+0x49bc0>
+<exercicio7+0x1432>
+<exercicio7+0x129e>
+

@@ -1,0 +1,16 @@
+# File for suppressing errors found in pid 9030: "agenda2"
+
+# Suppression for Error #1
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+libdrmemorylib.so!replace_strlen
+agenda2!imprimir
+agenda2!main
+
+## Mod+offs-style suppression for Error #1:
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.so+0xdd5eb>
+<agenda2+0x173c>
+<agenda2+0x139b>
+

@@ -1,0 +1,64 @@
+process=29212, parent=29206
+Dr. Memory version 2.3.0 build 1 built on Feb  6 2020 01:44:52
+start time: 3679745:52:11.585 == 17:52:11.585 10/13/2020
+Recorded 17 suppression(s) from default /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/bin64/suppress-default.txt
+new thread #0 id=29212
+WARNING: symbol cache file has wrong version
+
+module load event: "libdrmemorylib.so" 0x00007f9e33363000-0x00007f9e334c2000 modid: 1 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/bin64/release/libdrmemorylib.so
+WARNING: symbol cache file has wrong version
+
+module load event: "teste" 0x00007f9e43363000-0x00007f9e43368000 modid: 2 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/teste
+WARNING: symbol cache file has wrong version
+
+module load event: "ld-linux-x86-64.so.2" 0x00007f9e47338000-0x00007f9e47368000 modid: 3 /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: symbol cache file has wrong version
+
+module load event: "libdynamorio.so" 0x00007f9e4736e000-0x00007f9e47586000 modid: 4 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/dynamorio/lib64/release/libdynamorio.so
+WARNING: unable to open [vdso]
+WARNING: symbol cache file has wrong version
+
+module load event: "linux-vdso.so.1" 0x00007fff38f30000-0x00007fff38f31000 modid: 5 [vdso]
+
+module load event: "libc.so.6" 0x00007f9e46d63000-0x00007f9e46f55000 modid: 6 /usr/lib/x86_64-linux-gnu/libc-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/libc-2.31.so
+
+Error #1: POSSIBLE LEAK 4232 bytes 
+# 0 replace_malloc    [/drmemory_package/common/alloc_replace.c:2577] (0x00007f9e333acbc0 <libdrmemorylib.so+0x49bc0>) modid:1
+	error end
+
+Error #2: POSSIBLE LEAK 272 bytes 
+# 0 replace_calloc    [/drmemory_package/common/alloc_replace.c:2617] (0x00007f9e333ad430 <libdrmemorylib.so+0x4a430>) modid:1
+	error end
+
+Error #3: LEAK 9 bytes 
+# 0 replace_malloc    [/drmemory_package/common/alloc_replace.c:2577] (0x00007f9e333acbc0 <libdrmemorylib.so+0x49bc0>) modid:1
+	error end
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+	    20x: default i#79 (ld-linux)
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      1 unique,     1 total,      9 byte(s) of leak(s)
+      2 unique,     2 total,   4504 byte(s) of possible leak(s)
+Details: /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-teste.29212.000/results.txt
+
+DUPLICATE POTENTIAL ERROR COUNTS:
+
+POTENTIAL ERRORS FOUND:
+      0 unique,     0 total potential unaddressable access(es)
+      0 unique,     0 total potential uninitialized access(es)
+      0 unique,     0 total potential invalid heap argument(s)
+      0 unique,     0 total potential warning(s)
+      0 unique,     0 total,      0 byte(s) of potential leak(s)
+      0 unique,     0 total,      0 byte(s) of potential possible leak(s)
+Details: /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-teste.29212.000/potential_errors.txt
+Exiting @0:00:06.251 in thread 29212
+LOG END

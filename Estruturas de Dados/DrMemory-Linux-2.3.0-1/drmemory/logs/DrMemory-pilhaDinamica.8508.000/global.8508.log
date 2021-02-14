@@ -1,0 +1,74 @@
+process=8508, parent=8502
+Dr. Memory version 2.3.0 build 1 built on Feb  6 2020 01:44:52
+start time: 3680321:34:39.879 == 17:34:39.879 11/06/2020
+Recorded 17 suppression(s) from default /home/marcelosdias/UFPEL/AED 1/Pilha/DrMemory-Linux-2.3.0-1/bin64/suppress-default.txt
+new thread #0 id=8508
+WARNING: symbol cache file has wrong version
+
+module load event: "libdrmemorylib.so" 0x00007fc6bf665000-0x00007fc6bf7c4000 modid: 1 /home/marcelosdias/UFPEL/AED 1/Pilha/DrMemory-Linux-2.3.0-1/bin64/release/libdrmemorylib.so
+WARNING: symbol cache file has wrong version
+
+module load event: "pilhaDinamica" 0x00007fc6cf665000-0x00007fc6cf66a000 modid: 2 /home/marcelosdias/UFPEL/AED 1/Pilha/pilhaDinamica
+WARNING: symbol cache file has wrong version
+
+module load event: "ld-linux-x86-64.so.2" 0x00007fc6d363a000-0x00007fc6d366a000 modid: 3 /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: symbol cache file has wrong version
+
+module load event: "libdynamorio.so" 0x00007fc6d3670000-0x00007fc6d3888000 modid: 4 /home/marcelosdias/UFPEL/AED 1/Pilha/DrMemory-Linux-2.3.0-1/dynamorio/lib64/release/libdynamorio.so
+WARNING: unable to open [vdso]
+WARNING: symbol cache file has wrong version
+
+module load event: "linux-vdso.so.1" 0x00007ffd5edec000-0x00007ffd5eded000 modid: 5 [vdso]
+
+module load event: "libc.so.6" 0x00007fc6d3065000-0x00007fc6d3257000 modid: 6 /usr/lib/x86_64-linux-gnu/libc-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/libc-2.31.so
+
+NEW THREAD: main thread 8508
+
+
+Error #1: UNINITIALIZED READ: reading register rax
+# 0 PUSH          (0x00007fc6cf666436 <pilhaDinamica+0x1436>) modid:2
+# 1 main          (0x00007fc6cf6662e3 <pilhaDinamica+0x12e3>) modid:2
+Note: @0:00:01.370 in thread 8508
+Note: instruction: test   %rax %rax
+	error end
+
+Error #2: UNINITIALIZED READ: reading register rdx
+# 0 PUSH          (0x00007fc6cf6664d7 <pilhaDinamica+0x14d7>) modid:2
+# 1 main          (0x00007fc6cf6662e3 <pilhaDinamica+0x12e3>) modid:2
+Note: @0:00:01.373 in thread 8508
+Note: instruction: mov    %rcx -> (%rdx)
+	error end
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+	    15x: default i#79 (ld-linux)
+	     2x (leaked    4504 bytes): default (ld-linux stores index+1)
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      2 unique,     2 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      0 ignored assumed-innocuous system leak(s)
+     16 unique,    19 total,   7841 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /home/marcelosdias/UFPEL/AED 1/Pilha/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-pilhaDinamica.8508.000/results.txt
+
+DUPLICATE POTENTIAL ERROR COUNTS:
+
+POTENTIAL ERRORS FOUND:
+      0 unique,     0 total potential unaddressable access(es)
+      0 unique,     0 total potential uninitialized access(es)
+      0 unique,     0 total potential invalid heap argument(s)
+      0 unique,     0 total potential warning(s)
+      0 unique,     0 total,      0 byte(s) of potential leak(s)
+      0 unique,     0 total,      0 byte(s) of potential possible leak(s)
+Details: /home/marcelosdias/UFPEL/AED 1/Pilha/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-pilhaDinamica.8508.000/potential_errors.txt
+Exiting @0:00:11.633 in thread 8508
+LOG END

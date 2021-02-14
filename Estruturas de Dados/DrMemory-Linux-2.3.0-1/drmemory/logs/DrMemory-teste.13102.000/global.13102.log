@@ -1,0 +1,70 @@
+process=13102, parent=13096
+Dr. Memory version 2.3.0 build 1 built on Feb  6 2020 01:44:52
+start time: 3679741:27:20.831 == 13:27:20.831 10/13/2020
+Recorded 17 suppression(s) from default /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/bin64/suppress-default.txt
+new thread #0 id=13102
+WARNING: symbol cache file has wrong version
+
+module load event: "libdrmemorylib.so" 0x00007fb7c6ad6000-0x00007fb7c6c35000 modid: 1 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/bin64/release/libdrmemorylib.so
+WARNING: symbol cache file has wrong version
+
+module load event: "teste" 0x00007fb7d6ad6000-0x00007fb7d6adb000 modid: 2 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/teste
+WARNING: symbol cache file has wrong version
+
+module load event: "ld-linux-x86-64.so.2" 0x00007fb7daaab000-0x00007fb7daadb000 modid: 3 /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/ld-2.31.so
+WARNING: symbol cache file has wrong version
+
+module load event: "libdynamorio.so" 0x00007fb7daae1000-0x00007fb7dacf9000 modid: 4 /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/dynamorio/lib64/release/libdynamorio.so
+WARNING: unable to open [vdso]
+WARNING: symbol cache file has wrong version
+
+module load event: "linux-vdso.so.1" 0x00007fff43bdc000-0x00007fff43bdd000 modid: 5 [vdso]
+
+module load event: "libc.so.6" 0x00007fb7da4d6000-0x00007fb7da6c8000 modid: 6 /usr/lib/x86_64-linux-gnu/libc-2.31.so
+WARNING: unable to load symbols for /usr/lib/x86_64-linux-gnu/libc-2.31.so
+
+NEW THREAD: main thread 13102
+
+
+Error #1: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x00007fb7d6adf861-0x00007fb7d6adf862 1 byte(s)
+# 0 replace_strlen    [/drmemory_package/drmemory/replace.c:412] (0x00007fb7c6bb35e8 <libdrmemorylib.so+0xdd5e8>) modid:1
+# 1 main  (0x00007fb7d6ad7304 <teste+0x1304>) modid:2
+Note: @0:00:01.701 in thread 13102
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x00007fb7d6adf860-0x00007fb7d6adf861
+Note: instruction: movzx  (%rbx) -> %eax
+	error end
+
+DUPLICATE ERROR COUNTS:
+	Error #   1:      2
+
+SUPPRESSIONS USED:
+	    15x: default i#79 (ld-linux)
+	     2x (leaked    4504 bytes): default (ld-linux stores index+1)
+
+ERRORS FOUND:
+      1 unique,     2 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      0 ignored assumed-innocuous system leak(s)
+     16 unique,    19 total,   8778 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-teste.13102.000/results.txt
+
+DUPLICATE POTENTIAL ERROR COUNTS:
+
+POTENTIAL ERRORS FOUND:
+      0 unique,     0 total potential unaddressable access(es)
+      0 unique,     0 total potential uninitialized access(es)
+      0 unique,     0 total potential invalid heap argument(s)
+      0 unique,     0 total potential warning(s)
+      0 unique,     0 total,      0 byte(s) of potential leak(s)
+      0 unique,     0 total,      0 byte(s) of potential possible leak(s)
+Details: /home/marcelosdias/UFPEL/AED 1/GitHub/AED-1/DrMemory-Linux-2.3.0-1/drmemory/logs/DrMemory-teste.13102.000/potential_errors.txt
+Exiting @0:01:06.398 in thread 13102
+LOG END

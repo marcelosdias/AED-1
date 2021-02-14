@@ -1,0 +1,26 @@
+# File for suppressing errors found in pid 42993: "exercicio7"
+
+# Suppression for Error #1
+UNADDRESSABLE ACCESS
+name=Error #1 (update to meaningful name)
+exercicio7!retiraRepetidos
+exercicio7!main
+
+## Mod+offs-style suppression for Error #1:
+UNADDRESSABLE ACCESS
+name=Error #1 (update to meaningful name)
+<exercicio7+0x13e2>
+<exercicio7+0x129e>
+
+# Suppression for Error #2
+UNADDRESSABLE ACCESS
+name=Error #2 (update to meaningful name)
+exercicio7!retiraRepetidos
+exercicio7!main
+
+## Mod+offs-style suppression for Error #2:
+UNADDRESSABLE ACCESS
+name=Error #2 (update to meaningful name)
+<exercicio7+0x144b>
+<exercicio7+0x129e>
+

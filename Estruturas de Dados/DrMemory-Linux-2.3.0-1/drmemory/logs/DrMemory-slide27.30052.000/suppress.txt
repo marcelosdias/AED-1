@@ -1,2 +1,0 @@
-# File for suppressing errors found in pid 30052: "slide27"
-

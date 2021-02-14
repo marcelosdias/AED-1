@@ -1,2 +1,0 @@
-# File for suppressing errors found in pid 28979: "aula2-slide27"
-

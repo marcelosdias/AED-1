@@ -1,3 +1,0 @@
-Dr. Memory version 2.3.0 build 1 built on Feb  6 2020 01:44:52
-Dr. Memory errors that are likely to be false positives, for pid 8119: "agenda2"
-If these are all false positives and your focus is unaddressable errors, consider running with -light to skip all uninitialized reads and leaks for higher performance.

@@ -1,2 +1,0 @@
-/usr/lib/x86_64-linux-gnu/ld-2.31.so
-/usr/lib/x86_64-linux-gnu/libc-2.31.so

@@ -1,2 +1,0 @@
-# File for suppressing errors found in pid 10369: "slide30"
-
